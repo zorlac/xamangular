@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page</title>
+</head>
+
+<body style="font: 12px Arial">
+
+
+    <div id="container" data-ng-controller="XamController">
+        <a href="#/panel3">Get Description</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="#/panel4">Send To Server</a>
+        <br/><br/>
+
+        <div id="panel1">
+            Name: <input type="text" data-ng-model="Adhoc.name"/>
+        </div>
+        <div id="panel2">
+            <h3>Richard Teston Adhocs:</h3>
+            <ul>
+                <li data-ng-repeat="adhoc in adhocs | filter:Adhoc.name | orderBy:'applied'">
+                    {{ adhoc.name }} - {{ adhoc.applied }}
+                </li>
+            </ul>
+        </div>
+
+        <div id="dynPanel" data-ng-view=''>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="script/angular/angular.js"></script>
+    <script src="script/angular/angular-route.js"></script>
+    <script src="script/xamNgAppScr.js"></script>
+    <script>
+        angular.element ( document ).ready ( xam.zorlac.ng.Screen1.Init );
+    </script>
+
+
+</body>
+</html>
