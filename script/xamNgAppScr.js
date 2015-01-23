@@ -31,6 +31,10 @@ xam.zorlac.ng.Screen1 = {
         xam.zorlac.ng.Screen1.XamAppModule = XamAppModule;
 
         angular.bootstrap ( document, [ 'XamNgApp' ] );
+
+
+
+
     },
 
     XamController: function ( $scope ) {
